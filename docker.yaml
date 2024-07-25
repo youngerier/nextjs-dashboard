@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:13.1
+    restart: always
+    environment:
+      - POSTGRES_DB=wdb
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=jetbooster
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+    ports:
+      - 15432:5432
